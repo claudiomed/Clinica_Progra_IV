@@ -1,0 +1,11 @@
+C:\Users\Claudio\source\repos\Clinica_Progra_IV\DAL\bin\Debug\DAL.dll.config
+C:\Users\Claudio\source\repos\Clinica_Progra_IV\DAL\bin\Debug\DAL.dll
+C:\Users\Claudio\source\repos\Clinica_Progra_IV\DAL\bin\Debug\DAL.pdb
+C:\Users\Claudio\source\repos\Clinica_Progra_IV\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Claudio\source\repos\Clinica_Progra_IV\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Claudio\source\repos\Clinica_Progra_IV\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Claudio\source\repos\Clinica_Progra_IV\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Claudio\source\repos\Clinica_Progra_IV\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Claudio\source\repos\Clinica_Progra_IV\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Claudio\source\repos\Clinica_Progra_IV\DAL\obj\Debug\DAL.dll
+C:\Users\Claudio\source\repos\Clinica_Progra_IV\DAL\obj\Debug\DAL.pdb

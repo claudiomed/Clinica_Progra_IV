@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a0bc6e5184d74490b97db27ab5708a4a" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Agenda_TB" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Citas_TB" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Clientes_Padecimientos_TB" Width="1.5" PointX="7" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Consultorio_TB" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Empleados_TB" Width="1.5" PointX="10.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Especialidades_TB" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Facturas_TB" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Medicos_Especialidades_TB" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Medicos_TB" Width="1.5" PointX="12.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Metodos_Pago_TB" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Padecimientos_TB" Width="1.5" PointX="4" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Procedimientos_TB" Width="1.5" PointX="10" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Tipos_Perfiles_TB" Width="1.5" PointX="5.75" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Agenda_Cita_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Cita_Consultorio_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Cita_Fact_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Cita_ME_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Cita_MP_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Doctor_Empleado_ID_PK" ManuallyRouted="false" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Procedimiento_Especialidad_ID_PK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Usuarios_TB" Width="1.5" PointX="8" PointY="4.875" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Empleado_Usuario_ID_FK" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Usuario_TP_FK" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Horarios_TB" Width="1.5" PointX="9.375" PointY="8.875" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Agenda_Horario__ID_FK" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Tarjetas_TB" Width="1.5" PointX="3" PointY="6.125" />
+        <EntityTypeShape EntityType="Clinica_Progra_IVModel.Clientes_TB" Width="1.5" PointX="10.25" PointY="12.5" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Cita_Cliente_ID_FK" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Cliente_Usuario_ID_PK" />
+        <AssociationConnector Association="Clinica_Progra_IVModel.Tarjeta_Cliente_ID_FK" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

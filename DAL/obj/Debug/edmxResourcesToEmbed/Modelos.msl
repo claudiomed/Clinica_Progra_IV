@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Clinica_Progra_IVModelStoreContainer" CdmEntityContainer="Clinica_Progra_IVEntities">
+    <EntitySetMapping Name="Agenda_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Agenda_TB">
+        <MappingFragment StoreEntitySet="Agenda_TB">
+          <ScalarProperty Name="Agenda_ID" ColumnName="Agenda_ID" />
+          <ScalarProperty Name="Agenda_Cita_ID" ColumnName="Agenda_Cita_ID" />
+          <ScalarProperty Name="Agenda_Horario_ID" ColumnName="Agenda_Horario_ID" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Citas_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Citas_TB">
+        <MappingFragment StoreEntitySet="Citas_TB">
+          <ScalarProperty Name="Cita_ID" ColumnName="Cita_ID" />
+          <ScalarProperty Name="Cita_Cliente_ID" ColumnName="Cita_Cliente_ID" />
+          <ScalarProperty Name="Cita_MP_ID" ColumnName="Cita_MP_ID" />
+          <ScalarProperty Name="Cita_Consultorio_ID" ColumnName="Cita_Consultorio_ID" />
+          <ScalarProperty Name="Cita_ME_ID" ColumnName="Cita_ME_ID" />
+          <ScalarProperty Name="Cita_Fact_ID" ColumnName="Cita_Fact_ID" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes_Padecimientos_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Clientes_Padecimientos_TB">
+        <MappingFragment StoreEntitySet="Clientes_Padecimientos_TB">
+          <ScalarProperty Name="CP_ID" ColumnName="CP_ID" />
+          <ScalarProperty Name="CP_Cliente_ID" ColumnName="CP_Cliente_ID" />
+          <ScalarProperty Name="CP_Padecimiento_ID" ColumnName="CP_Padecimiento_ID" />
+          <ScalarProperty Name="CP_Comentarios" ColumnName="CP_Comentarios" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Clientes_TB">
+        <MappingFragment StoreEntitySet="Clientes_TB">
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Cliente_Usuario_ID" ColumnName="Cliente_Usuario_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consultorio_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Consultorio_TB">
+        <MappingFragment StoreEntitySet="Consultorio_TB">
+          <ScalarProperty Name="Consultorio_ID" ColumnName="Consultorio_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleados_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Empleados_TB">
+        <MappingFragment StoreEntitySet="Empleados_TB">
+          <ScalarProperty Name="Empleado_ID" ColumnName="Empleado_ID" />
+          <ScalarProperty Name="Empleado_Usuario_ID" ColumnName="Empleado_Usuario_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Especialidades_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Especialidades_TB">
+        <MappingFragment StoreEntitySet="Especialidades_TB">
+          <ScalarProperty Name="Especialidad_ID" ColumnName="Especialidad_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Facturas_TB">
+        <MappingFragment StoreEntitySet="Facturas_TB">
+          <ScalarProperty Name="Factura_ID" ColumnName="Factura_ID" />
+          <ScalarProperty Name="Fact_Metodo_Pago" ColumnName="Fact_Metodo_Pago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horarios_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Horarios_TB">
+        <MappingFragment StoreEntitySet="Horarios_TB">
+          <ScalarProperty Name="Horario_ID" ColumnName="Horario_ID" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Hora_Inicio" ColumnName="Hora_Inicio" />
+          <ScalarProperty Name="Hora_Fin" ColumnName="Hora_Fin" />
+          <ScalarProperty Name="Disponible" ColumnName="Disponible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medicos_Especialidades_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Medicos_Especialidades_TB">
+        <MappingFragment StoreEntitySet="Medicos_Especialidades_TB">
+          <ScalarProperty Name="MED_ID" ColumnName="MED_ID" />
+          <ScalarProperty Name="ME_Especialidad_ID" ColumnName="ME_Especialidad_ID" />
+          <ScalarProperty Name="ME_Medico_ID" ColumnName="ME_Medico_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medicos_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Medicos_TB">
+        <MappingFragment StoreEntitySet="Medicos_TB">
+          <ScalarProperty Name="Numero_Carne" ColumnName="Numero_Carne" />
+          <ScalarProperty Name="Doctor_Empleado_ID" ColumnName="Doctor_Empleado_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Metodos_Pago_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Metodos_Pago_TB">
+        <MappingFragment StoreEntitySet="Metodos_Pago_TB">
+          <ScalarProperty Name="MP_ID" ColumnName="MP_ID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Padecimientos_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Padecimientos_TB">
+        <MappingFragment StoreEntitySet="Padecimientos_TB">
+          <ScalarProperty Name="Padecimiento_ID" ColumnName="Padecimiento_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Procedimientos_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Procedimientos_TB">
+        <MappingFragment StoreEntitySet="Procedimientos_TB">
+          <ScalarProperty Name="Procedimiento_ID" ColumnName="Procedimiento_ID" />
+          <ScalarProperty Name="Procedimiento_Especialidad_ID" ColumnName="Procedimiento_Especialidad_ID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Costo" ColumnName="Costo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipos_Perfiles_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Tipos_Perfiles_TB">
+        <MappingFragment StoreEntitySet="Tipos_Perfiles_TB">
+          <ScalarProperty Name="Tipo_Perfil_ID" ColumnName="Tipo_Perfil_ID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Usuarios_TB">
+        <MappingFragment StoreEntitySet="Usuarios_TB">
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tipo_Perfil" ColumnName="Tipo_Perfil" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Usuario_ID" ColumnName="Usuario_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

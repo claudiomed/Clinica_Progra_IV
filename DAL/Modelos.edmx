@@ -1,0 +1,970 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Clinica_Progra_IVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Agenda_TB">
+          <Key>
+            <PropertyRef Name="Agenda_ID" />
+          </Key>
+          <Property Name="Agenda_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Agenda_Cita_ID" Type="int" Nullable="false" />
+          <Property Name="Agenda_Horario_ID" Type="smallint" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Citas_TB">
+          <Key>
+            <PropertyRef Name="Cita_ID" />
+          </Key>
+          <Property Name="Cita_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cita_Cliente_ID" Type="int" />
+          <Property Name="Cita_MP_ID" Type="smallint" />
+          <Property Name="Cita_Consultorio_ID" Type="smallint" />
+          <Property Name="Cita_ME_ID" Type="int" />
+          <Property Name="Cita_Fact_ID" Type="int" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Estado" Type="char" MaxLength="1" />
+          <Property Name="Fecha_Finalizacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Clientes_Padecimientos_TB">
+          <Key>
+            <PropertyRef Name="CP_ID" />
+          </Key>
+          <Property Name="CP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CP_Cliente_ID" Type="int" Nullable="false" />
+          <Property Name="CP_Padecimiento_ID" Type="int" Nullable="false" />
+          <Property Name="CP_Comentarios" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Clientes_TB">
+          <Key>
+            <PropertyRef Name="Cliente_ID" />
+          </Key>
+          <Property Name="Cliente_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cliente_Usuario_ID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Consultorio_TB">
+          <Key>
+            <PropertyRef Name="Consultorio_ID" />
+          </Key>
+          <Property Name="Consultorio_ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleados_TB">
+          <Key>
+            <PropertyRef Name="Empleado_ID" />
+          </Key>
+          <Property Name="Empleado_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empleado_Usuario_ID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Especialidades_TB">
+          <Key>
+            <PropertyRef Name="Especialidad_ID" />
+          </Key>
+          <Property Name="Especialidad_ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Facturas_TB">
+          <Key>
+            <PropertyRef Name="Factura_ID" />
+          </Key>
+          <Property Name="Factura_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fact_Metodo_Pago" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Horarios_TB">
+          <Key>
+            <PropertyRef Name="Horario_ID" />
+          </Key>
+          <Property Name="Horario_ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dia" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Hora_Inicio" Type="datetime" />
+          <Property Name="Hora_Fin" Type="datetime" />
+          <Property Name="Disponible" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medicos_Especialidades_TB">
+          <Key>
+            <PropertyRef Name="MED_ID" />
+          </Key>
+          <Property Name="MED_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ME_Especialidad_ID" Type="smallint" Nullable="false" />
+          <Property Name="ME_Medico_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medicos_TB">
+          <Key>
+            <PropertyRef Name="Numero_Carne" />
+          </Key>
+          <Property Name="Numero_Carne" Type="int" Nullable="false" />
+          <Property Name="Doctor_Empleado_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Metodos_Pago_TB">
+          <Key>
+            <PropertyRef Name="MP_ID" />
+          </Key>
+          <Property Name="MP_ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Padecimientos_TB">
+          <Key>
+            <PropertyRef Name="Padecimiento_ID" />
+          </Key>
+          <Property Name="Padecimiento_ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Procedimientos_TB">
+          <Key>
+            <PropertyRef Name="Procedimiento_ID" />
+          </Key>
+          <Property Name="Procedimiento_ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Procedimiento_Especialidad_ID" Type="smallint" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Costo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tarjetas_TB">
+          <Key>
+            <PropertyRef Name="Numero_Tarjeta" />
+          </Key>
+          <Property Name="Numero_Tarjeta" Type="int" Nullable="false" />
+          <Property Name="Tarjeta_Cliente_ID" Type="int" Nullable="false" />
+          <Property Name="Fecha_Vencimiento" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipos_Perfiles_TB">
+          <Key>
+            <PropertyRef Name="Tipo_Perfil_ID" />
+          </Key>
+          <Property Name="Tipo_Perfil_ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Usuarios_TB">
+          <Key>
+            <PropertyRef Name="Usuario_ID" />
+          </Key>
+          <Property Name="Usuario_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tipo_Perfil" Type="smallint" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fecha_Nacimiento" Type="date" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="Agenda_Cita_ID_FK">
+          <End Role="Citas_TB" Type="Self.Citas_TB" Multiplicity="1" />
+          <End Role="Agenda_TB" Type="Self.Agenda_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Citas_TB">
+              <PropertyRef Name="Cita_ID" />
+            </Principal>
+            <Dependent Role="Agenda_TB">
+              <PropertyRef Name="Agenda_Cita_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Agenda_Horario__ID_FK">
+          <End Role="Horarios_TB" Type="Self.Horarios_TB" Multiplicity="0..1" />
+          <End Role="Agenda_TB" Type="Self.Agenda_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Horarios_TB">
+              <PropertyRef Name="Horario_ID" />
+            </Principal>
+            <Dependent Role="Agenda_TB">
+              <PropertyRef Name="Agenda_Horario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cita_Cliente_ID_FK">
+          <End Role="Clientes_TB" Type="Self.Clientes_TB" Multiplicity="0..1" />
+          <End Role="Citas_TB" Type="Self.Citas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes_TB">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Citas_TB">
+              <PropertyRef Name="Cita_Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cita_Consultorio_ID_FK">
+          <End Role="Consultorio_TB" Type="Self.Consultorio_TB" Multiplicity="0..1" />
+          <End Role="Citas_TB" Type="Self.Citas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consultorio_TB">
+              <PropertyRef Name="Consultorio_ID" />
+            </Principal>
+            <Dependent Role="Citas_TB">
+              <PropertyRef Name="Cita_Consultorio_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cita_Fact_ID_FK">
+          <End Role="Facturas_TB" Type="Self.Facturas_TB" Multiplicity="0..1" />
+          <End Role="Citas_TB" Type="Self.Citas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facturas_TB">
+              <PropertyRef Name="Factura_ID" />
+            </Principal>
+            <Dependent Role="Citas_TB">
+              <PropertyRef Name="Cita_Fact_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cita_ME_ID_FK">
+          <End Role="Medicos_Especialidades_TB" Type="Self.Medicos_Especialidades_TB" Multiplicity="0..1" />
+          <End Role="Citas_TB" Type="Self.Citas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicos_Especialidades_TB">
+              <PropertyRef Name="MED_ID" />
+            </Principal>
+            <Dependent Role="Citas_TB">
+              <PropertyRef Name="Cita_ME_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cita_MP_ID_FK">
+          <End Role="Metodos_Pago_TB" Type="Self.Metodos_Pago_TB" Multiplicity="0..1" />
+          <End Role="Citas_TB" Type="Self.Citas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Metodos_Pago_TB">
+              <PropertyRef Name="MP_ID" />
+            </Principal>
+            <Dependent Role="Citas_TB">
+              <PropertyRef Name="Cita_MP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cliente_Usuario_ID_PK">
+          <End Role="Usuarios_TB" Type="Self.Usuarios_TB" Multiplicity="1" />
+          <End Role="Clientes_TB" Type="Self.Clientes_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios_TB">
+              <PropertyRef Name="Usuario_ID" />
+            </Principal>
+            <Dependent Role="Clientes_TB">
+              <PropertyRef Name="Cliente_Usuario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Doctor_Empleado_ID_PK">
+          <End Role="Empleados_TB" Type="Self.Empleados_TB" Multiplicity="1" />
+          <End Role="Medicos_TB" Type="Self.Medicos_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados_TB">
+              <PropertyRef Name="Empleado_ID" />
+            </Principal>
+            <Dependent Role="Medicos_TB">
+              <PropertyRef Name="Doctor_Empleado_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Empleado_Usuario_ID_FK">
+          <End Role="Usuarios_TB" Type="Self.Usuarios_TB" Multiplicity="1" />
+          <End Role="Empleados_TB" Type="Self.Empleados_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios_TB">
+              <PropertyRef Name="Usuario_ID" />
+            </Principal>
+            <Dependent Role="Empleados_TB">
+              <PropertyRef Name="Empleado_Usuario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Procedimiento_Especialidad_ID_PK">
+          <End Role="Especialidades_TB" Type="Self.Especialidades_TB" Multiplicity="1" />
+          <End Role="Procedimientos_TB" Type="Self.Procedimientos_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidades_TB">
+              <PropertyRef Name="Especialidad_ID" />
+            </Principal>
+            <Dependent Role="Procedimientos_TB">
+              <PropertyRef Name="Procedimiento_Especialidad_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tarjeta_Cliente_ID_FK">
+          <End Role="Clientes_TB" Type="Self.Clientes_TB" Multiplicity="1" />
+          <End Role="Tarjetas_TB" Type="Self.Tarjetas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes_TB">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Tarjetas_TB">
+              <PropertyRef Name="Tarjeta_Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Usuario_TP_FK">
+          <End Role="Tipos_Perfiles_TB" Type="Self.Tipos_Perfiles_TB" Multiplicity="1" />
+          <End Role="Usuarios_TB" Type="Self.Usuarios_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_Perfiles_TB">
+              <PropertyRef Name="Tipo_Perfil_ID" />
+            </Principal>
+            <Dependent Role="Usuarios_TB">
+              <PropertyRef Name="Tipo_Perfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Clinica_Progra_IVModelStoreContainer">
+          <EntitySet Name="Agenda_TB" EntityType="Self.Agenda_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Citas_TB" EntityType="Self.Citas_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clientes_Padecimientos_TB" EntityType="Self.Clientes_Padecimientos_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clientes_TB" EntityType="Self.Clientes_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Consultorio_TB" EntityType="Self.Consultorio_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleados_TB" EntityType="Self.Empleados_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Especialidades_TB" EntityType="Self.Especialidades_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facturas_TB" EntityType="Self.Facturas_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Horarios_TB" EntityType="Self.Horarios_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medicos_Especialidades_TB" EntityType="Self.Medicos_Especialidades_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medicos_TB" EntityType="Self.Medicos_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Metodos_Pago_TB" EntityType="Self.Metodos_Pago_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Padecimientos_TB" EntityType="Self.Padecimientos_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Procedimientos_TB" EntityType="Self.Procedimientos_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tarjetas_TB" EntityType="Self.Tarjetas_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipos_Perfiles_TB" EntityType="Self.Tipos_Perfiles_TB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios_TB" EntityType="Self.Usuarios_TB" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Agenda_Cita_ID_FK" Association="Self.Agenda_Cita_ID_FK">
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+            <End Role="Agenda_TB" EntitySet="Agenda_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Agenda_Horario__ID_FK" Association="Self.Agenda_Horario__ID_FK">
+            <End Role="Horarios_TB" EntitySet="Horarios_TB" />
+            <End Role="Agenda_TB" EntitySet="Agenda_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Cita_Cliente_ID_FK" Association="Self.Cita_Cliente_ID_FK">
+            <End Role="Clientes_TB" EntitySet="Clientes_TB" />
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Cita_Consultorio_ID_FK" Association="Self.Cita_Consultorio_ID_FK">
+            <End Role="Consultorio_TB" EntitySet="Consultorio_TB" />
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Cita_Fact_ID_FK" Association="Self.Cita_Fact_ID_FK">
+            <End Role="Facturas_TB" EntitySet="Facturas_TB" />
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Cita_ME_ID_FK" Association="Self.Cita_ME_ID_FK">
+            <End Role="Medicos_Especialidades_TB" EntitySet="Medicos_Especialidades_TB" />
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Cita_MP_ID_FK" Association="Self.Cita_MP_ID_FK">
+            <End Role="Metodos_Pago_TB" EntitySet="Metodos_Pago_TB" />
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Cliente_Usuario_ID_PK" Association="Self.Cliente_Usuario_ID_PK">
+            <End Role="Usuarios_TB" EntitySet="Usuarios_TB" />
+            <End Role="Clientes_TB" EntitySet="Clientes_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Doctor_Empleado_ID_PK" Association="Self.Doctor_Empleado_ID_PK">
+            <End Role="Empleados_TB" EntitySet="Empleados_TB" />
+            <End Role="Medicos_TB" EntitySet="Medicos_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Empleado_Usuario_ID_FK" Association="Self.Empleado_Usuario_ID_FK">
+            <End Role="Usuarios_TB" EntitySet="Usuarios_TB" />
+            <End Role="Empleados_TB" EntitySet="Empleados_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Procedimiento_Especialidad_ID_PK" Association="Self.Procedimiento_Especialidad_ID_PK">
+            <End Role="Especialidades_TB" EntitySet="Especialidades_TB" />
+            <End Role="Procedimientos_TB" EntitySet="Procedimientos_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Tarjeta_Cliente_ID_FK" Association="Self.Tarjeta_Cliente_ID_FK">
+            <End Role="Clientes_TB" EntitySet="Clientes_TB" />
+            <End Role="Tarjetas_TB" EntitySet="Tarjetas_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Usuario_TP_FK" Association="Self.Usuario_TP_FK">
+            <End Role="Tipos_Perfiles_TB" EntitySet="Tipos_Perfiles_TB" />
+            <End Role="Usuarios_TB" EntitySet="Usuarios_TB" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Clinica_Progra_IVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Agenda_TB">
+          <Key>
+            <PropertyRef Name="Agenda_ID" />
+          </Key>
+          <Property Name="Agenda_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Agenda_Cita_ID" Type="Int32" Nullable="false" />
+          <Property Name="Agenda_Horario_ID" Type="Int16" />
+          <Property Name="Comentarios" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Citas_TB" Relationship="Self.Agenda_Cita_ID_FK" FromRole="Agenda_TB" ToRole="Citas_TB" />
+          <NavigationProperty Name="Horarios_TB" Relationship="Clinica_Progra_IVModel.Agenda_Horario__ID_FK" FromRole="Agenda_TB" ToRole="Horarios_TB" />
+        </EntityType>
+        <EntityType Name="Citas_TB">
+          <Key>
+            <PropertyRef Name="Cita_ID" />
+          </Key>
+          <Property Name="Cita_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cita_Cliente_ID" Type="Int32" />
+          <Property Name="Cita_MP_ID" Type="Int16" />
+          <Property Name="Cita_Consultorio_ID" Type="Int16" />
+          <Property Name="Cita_ME_ID" Type="Int32" />
+          <Property Name="Cita_Fact_ID" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Agenda_TB" Relationship="Self.Agenda_Cita_ID_FK" FromRole="Citas_TB" ToRole="Agenda_TB" />
+          <NavigationProperty Name="Consultorio_TB" Relationship="Self.Cita_Consultorio_ID_FK" FromRole="Citas_TB" ToRole="Consultorio_TB" />
+          <NavigationProperty Name="Facturas_TB" Relationship="Self.Cita_Fact_ID_FK" FromRole="Citas_TB" ToRole="Facturas_TB" />
+          <NavigationProperty Name="Medicos_Especialidades_TB" Relationship="Self.Cita_ME_ID_FK" FromRole="Citas_TB" ToRole="Medicos_Especialidades_TB" />
+          <NavigationProperty Name="Metodos_Pago_TB" Relationship="Self.Cita_MP_ID_FK" FromRole="Citas_TB" ToRole="Metodos_Pago_TB" />
+          <Property Name="Fecha_Finalizacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Clientes_TB" Relationship="Clinica_Progra_IVModel.Cita_Cliente_ID_FK" FromRole="Citas_TB" ToRole="Clientes_TB" />
+        </EntityType>
+        <EntityType Name="Clientes_Padecimientos_TB">
+          <Key>
+            <PropertyRef Name="CP_ID" />
+          </Key>
+          <Property Name="CP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CP_Cliente_ID" Type="Int32" Nullable="false" />
+          <Property Name="CP_Padecimiento_ID" Type="Int32" Nullable="false" />
+          <Property Name="CP_Comentarios" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Consultorio_TB">
+          <Key>
+            <PropertyRef Name="Consultorio_ID" />
+          </Key>
+          <Property Name="Consultorio_ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Citas_TB" Relationship="Self.Cita_Consultorio_ID_FK" FromRole="Consultorio_TB" ToRole="Citas_TB" />
+        </EntityType>
+        <EntityType Name="Empleados_TB">
+          <Key>
+            <PropertyRef Name="Empleado_ID" />
+          </Key>
+          <Property Name="Empleado_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empleado_Usuario_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Medicos_TB" Relationship="Self.Doctor_Empleado_ID_PK" FromRole="Empleados_TB" ToRole="Medicos_TB" />
+          <NavigationProperty Name="Usuarios_TB" Relationship="Clinica_Progra_IVModel.Empleado_Usuario_ID_FK" FromRole="Empleados_TB" ToRole="Usuarios_TB" />
+        </EntityType>
+        <EntityType Name="Especialidades_TB">
+          <Key>
+            <PropertyRef Name="Especialidad_ID" />
+          </Key>
+          <Property Name="Especialidad_ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Procedimientos_TB" Relationship="Self.Procedimiento_Especialidad_ID_PK" FromRole="Especialidades_TB" ToRole="Procedimientos_TB" />
+        </EntityType>
+        <EntityType Name="Facturas_TB">
+          <Key>
+            <PropertyRef Name="Factura_ID" />
+          </Key>
+          <Property Name="Factura_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fact_Metodo_Pago" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Citas_TB" Relationship="Self.Cita_Fact_ID_FK" FromRole="Facturas_TB" ToRole="Citas_TB" />
+        </EntityType>
+        <EntityType Name="Medicos_Especialidades_TB">
+          <Key>
+            <PropertyRef Name="MED_ID" />
+          </Key>
+          <Property Name="MED_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ME_Especialidad_ID" Type="Int16" Nullable="false" />
+          <Property Name="ME_Medico_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Citas_TB" Relationship="Self.Cita_ME_ID_FK" FromRole="Medicos_Especialidades_TB" ToRole="Citas_TB" />
+        </EntityType>
+        <EntityType Name="Medicos_TB">
+          <Key>
+            <PropertyRef Name="Numero_Carne" />
+          </Key>
+          <Property Name="Numero_Carne" Type="Int32" Nullable="false" />
+          <Property Name="Doctor_Empleado_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Empleados_TB" Relationship="Self.Doctor_Empleado_ID_PK" FromRole="Medicos_TB" ToRole="Empleados_TB" />
+        </EntityType>
+        <EntityType Name="Metodos_Pago_TB">
+          <Key>
+            <PropertyRef Name="MP_ID" />
+          </Key>
+          <Property Name="MP_ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Citas_TB" Relationship="Self.Cita_MP_ID_FK" FromRole="Metodos_Pago_TB" ToRole="Citas_TB" />
+        </EntityType>
+        <EntityType Name="Padecimientos_TB">
+          <Key>
+            <PropertyRef Name="Padecimiento_ID" />
+          </Key>
+          <Property Name="Padecimiento_ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Procedimientos_TB">
+          <Key>
+            <PropertyRef Name="Procedimiento_ID" />
+          </Key>
+          <Property Name="Procedimiento_ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Procedimiento_Especialidad_ID" Type="Int16" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Costo" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Especialidades_TB" Relationship="Self.Procedimiento_Especialidad_ID_PK" FromRole="Procedimientos_TB" ToRole="Especialidades_TB" />
+        </EntityType>
+        <EntityType Name="Tipos_Perfiles_TB">
+          <Key>
+            <PropertyRef Name="Tipo_Perfil_ID" />
+          </Key>
+          <Property Name="Tipo_Perfil_ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios_TB" Relationship="Clinica_Progra_IVModel.Usuario_TP_FK" FromRole="Tipos_Perfiles_TB" ToRole="Usuarios_TB" />
+        </EntityType>
+        <Association Name="Agenda_Cita_ID_FK">
+          <End Role="Citas_TB" Type="Self.Citas_TB" Multiplicity="1" />
+          <End Role="Agenda_TB" Type="Self.Agenda_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Citas_TB">
+              <PropertyRef Name="Cita_ID" />
+            </Principal>
+            <Dependent Role="Agenda_TB">
+              <PropertyRef Name="Agenda_Cita_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cita_Consultorio_ID_FK">
+          <End Role="Consultorio_TB" Type="Self.Consultorio_TB" Multiplicity="0..1" />
+          <End Role="Citas_TB" Type="Self.Citas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consultorio_TB">
+              <PropertyRef Name="Consultorio_ID" />
+            </Principal>
+            <Dependent Role="Citas_TB">
+              <PropertyRef Name="Cita_Consultorio_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cita_Fact_ID_FK">
+          <End Role="Facturas_TB" Type="Self.Facturas_TB" Multiplicity="0..1" />
+          <End Role="Citas_TB" Type="Self.Citas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facturas_TB">
+              <PropertyRef Name="Factura_ID" />
+            </Principal>
+            <Dependent Role="Citas_TB">
+              <PropertyRef Name="Cita_Fact_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cita_ME_ID_FK">
+          <End Role="Medicos_Especialidades_TB" Type="Self.Medicos_Especialidades_TB" Multiplicity="0..1" />
+          <End Role="Citas_TB" Type="Self.Citas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicos_Especialidades_TB">
+              <PropertyRef Name="MED_ID" />
+            </Principal>
+            <Dependent Role="Citas_TB">
+              <PropertyRef Name="Cita_ME_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cita_MP_ID_FK">
+          <End Role="Metodos_Pago_TB" Type="Self.Metodos_Pago_TB" Multiplicity="0..1" />
+          <End Role="Citas_TB" Type="Self.Citas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Metodos_Pago_TB">
+              <PropertyRef Name="MP_ID" />
+            </Principal>
+            <Dependent Role="Citas_TB">
+              <PropertyRef Name="Cita_MP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Doctor_Empleado_ID_PK">
+          <End Role="Empleados_TB" Type="Self.Empleados_TB" Multiplicity="1" />
+          <End Role="Medicos_TB" Type="Self.Medicos_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados_TB">
+              <PropertyRef Name="Empleado_ID" />
+            </Principal>
+            <Dependent Role="Medicos_TB">
+              <PropertyRef Name="Doctor_Empleado_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Procedimiento_Especialidad_ID_PK">
+          <End Role="Especialidades_TB" Type="Self.Especialidades_TB" Multiplicity="1" />
+          <End Role="Procedimientos_TB" Type="Self.Procedimientos_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidades_TB">
+              <PropertyRef Name="Especialidad_ID" />
+            </Principal>
+            <Dependent Role="Procedimientos_TB">
+              <PropertyRef Name="Procedimiento_Especialidad_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Clinica_Progra_IVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Agenda_TB" EntityType="Self.Agenda_TB" />
+          <EntitySet Name="Citas_TB" EntityType="Self.Citas_TB" />
+          <EntitySet Name="Clientes_Padecimientos_TB" EntityType="Self.Clientes_Padecimientos_TB" />
+          <EntitySet Name="Consultorio_TB" EntityType="Self.Consultorio_TB" />
+          <EntitySet Name="Empleados_TB" EntityType="Self.Empleados_TB" />
+          <EntitySet Name="Especialidades_TB" EntityType="Self.Especialidades_TB" />
+          <EntitySet Name="Facturas_TB" EntityType="Self.Facturas_TB" />
+          <EntitySet Name="Medicos_Especialidades_TB" EntityType="Self.Medicos_Especialidades_TB" />
+          <EntitySet Name="Medicos_TB" EntityType="Self.Medicos_TB" />
+          <EntitySet Name="Metodos_Pago_TB" EntityType="Self.Metodos_Pago_TB" />
+          <EntitySet Name="Padecimientos_TB" EntityType="Self.Padecimientos_TB" />
+          <EntitySet Name="Procedimientos_TB" EntityType="Self.Procedimientos_TB" />
+          <EntitySet Name="Tipos_Perfiles_TB" EntityType="Self.Tipos_Perfiles_TB" />
+          <AssociationSet Name="Agenda_Cita_ID_FK" Association="Self.Agenda_Cita_ID_FK">
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+            <End Role="Agenda_TB" EntitySet="Agenda_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Cita_Consultorio_ID_FK" Association="Self.Cita_Consultorio_ID_FK">
+            <End Role="Consultorio_TB" EntitySet="Consultorio_TB" />
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Cita_Fact_ID_FK" Association="Self.Cita_Fact_ID_FK">
+            <End Role="Facturas_TB" EntitySet="Facturas_TB" />
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Cita_ME_ID_FK" Association="Self.Cita_ME_ID_FK">
+            <End Role="Medicos_Especialidades_TB" EntitySet="Medicos_Especialidades_TB" />
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Cita_MP_ID_FK" Association="Self.Cita_MP_ID_FK">
+            <End Role="Metodos_Pago_TB" EntitySet="Metodos_Pago_TB" />
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Doctor_Empleado_ID_PK" Association="Self.Doctor_Empleado_ID_PK">
+            <End Role="Empleados_TB" EntitySet="Empleados_TB" />
+            <End Role="Medicos_TB" EntitySet="Medicos_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Procedimiento_Especialidad_ID_PK" Association="Self.Procedimiento_Especialidad_ID_PK">
+            <End Role="Especialidades_TB" EntitySet="Especialidades_TB" />
+            <End Role="Procedimientos_TB" EntitySet="Procedimientos_TB" />
+          </AssociationSet>
+          <EntitySet Name="Usuarios_TB" EntityType="Clinica_Progra_IVModel.Usuarios_TB" />
+          <AssociationSet Name="Empleado_Usuario_ID_FK" Association="Clinica_Progra_IVModel.Empleado_Usuario_ID_FK">
+            <End Role="Usuarios_TB" EntitySet="Usuarios_TB" />
+            <End Role="Empleados_TB" EntitySet="Empleados_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Usuario_TP_FK" Association="Clinica_Progra_IVModel.Usuario_TP_FK">
+            <End Role="Tipos_Perfiles_TB" EntitySet="Tipos_Perfiles_TB" />
+            <End Role="Usuarios_TB" EntitySet="Usuarios_TB" />
+          </AssociationSet>
+          <EntitySet Name="Horarios_TB" EntityType="Clinica_Progra_IVModel.Horarios_TB" />
+          <AssociationSet Name="Agenda_Horario__ID_FK" Association="Clinica_Progra_IVModel.Agenda_Horario__ID_FK">
+            <End Role="Horarios_TB" EntitySet="Horarios_TB" />
+            <End Role="Agenda_TB" EntitySet="Agenda_TB" />
+          </AssociationSet>
+          <EntitySet Name="Tarjetas_TB" EntityType="Clinica_Progra_IVModel.Tarjetas_TB" />
+          <EntitySet Name="Clientes_TB" EntityType="Clinica_Progra_IVModel.Clientes_TB" />
+          <AssociationSet Name="Cita_Cliente_ID_FK" Association="Clinica_Progra_IVModel.Cita_Cliente_ID_FK">
+            <End Role="Clientes_TB" EntitySet="Clientes_TB" />
+            <End Role="Citas_TB" EntitySet="Citas_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Cliente_Usuario_ID_PK" Association="Clinica_Progra_IVModel.Cliente_Usuario_ID_PK">
+            <End Role="Usuarios_TB" EntitySet="Usuarios_TB" />
+            <End Role="Clientes_TB" EntitySet="Clientes_TB" />
+          </AssociationSet>
+          <AssociationSet Name="Tarjeta_Cliente_ID_FK" Association="Clinica_Progra_IVModel.Tarjeta_Cliente_ID_FK">
+            <End Role="Clientes_TB" EntitySet="Clientes_TB" />
+            <End Role="Tarjetas_TB" EntitySet="Tarjetas_TB" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Usuarios_TB">
+          <Key>
+            <PropertyRef Name="Usuario_ID" />
+          </Key>
+          <Property Name="Usuario_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo_Perfil" Type="Int16" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Apellidos" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Empleados_TB" Relationship="Clinica_Progra_IVModel.Empleado_Usuario_ID_FK" FromRole="Usuarios_TB" ToRole="Empleados_TB" />
+          <NavigationProperty Name="Tipos_Perfiles_TB" Relationship="Clinica_Progra_IVModel.Usuario_TP_FK" FromRole="Usuarios_TB" ToRole="Tipos_Perfiles_TB" />
+          <NavigationProperty Name="Clientes_TB" Relationship="Clinica_Progra_IVModel.Cliente_Usuario_ID_PK" FromRole="Usuarios_TB" ToRole="Clientes_TB" />
+        </EntityType>
+        <Association Name="Empleado_Usuario_ID_FK">
+          <End Type="Clinica_Progra_IVModel.Usuarios_TB" Role="Usuarios_TB" Multiplicity="1" />
+          <End Type="Clinica_Progra_IVModel.Empleados_TB" Role="Empleados_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios_TB">
+              <PropertyRef Name="Usuario_ID" />
+            </Principal>
+            <Dependent Role="Empleados_TB">
+              <PropertyRef Name="Empleado_Usuario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Usuario_TP_FK">
+          <End Type="Clinica_Progra_IVModel.Tipos_Perfiles_TB" Role="Tipos_Perfiles_TB" Multiplicity="1" />
+          <End Type="Clinica_Progra_IVModel.Usuarios_TB" Role="Usuarios_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_Perfiles_TB">
+              <PropertyRef Name="Tipo_Perfil_ID" />
+            </Principal>
+            <Dependent Role="Usuarios_TB">
+              <PropertyRef Name="Tipo_Perfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Horarios_TB">
+          <Key>
+            <PropertyRef Name="Horario_ID" />
+          </Key>
+          <Property Name="Horario_ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dia" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Hora_Inicio" Type="DateTime" Precision="3" />
+          <Property Name="Hora_Fin" Type="DateTime" Precision="3" />
+          <Property Name="Disponible" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Agenda_TB" Relationship="Clinica_Progra_IVModel.Agenda_Horario__ID_FK" FromRole="Horarios_TB" ToRole="Agenda_TB" />
+        </EntityType>
+        <Association Name="Agenda_Horario__ID_FK">
+          <End Type="Clinica_Progra_IVModel.Horarios_TB" Role="Horarios_TB" Multiplicity="0..1" />
+          <End Type="Clinica_Progra_IVModel.Agenda_TB" Role="Agenda_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Horarios_TB">
+              <PropertyRef Name="Horario_ID" />
+            </Principal>
+            <Dependent Role="Agenda_TB">
+              <PropertyRef Name="Agenda_Horario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tarjetas_TB">
+          <Key>
+            <PropertyRef Name="Numero_Tarjeta" />
+          </Key>
+          <Property Name="Numero_Tarjeta" Type="Int32" Nullable="false" />
+          <Property Name="Tarjeta_Cliente_ID" Type="Int32" Nullable="false" />
+          <Property Name="Fecha_Vencimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Clientes_TB" Relationship="Clinica_Progra_IVModel.Tarjeta_Cliente_ID_FK" FromRole="Tarjetas_TB" ToRole="Clientes_TB" />
+        </EntityType>
+        <EntityType Name="Clientes_TB">
+          <Key>
+            <PropertyRef Name="Cliente_ID" />
+          </Key>
+          <Property Name="Cliente_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cliente_Usuario_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Citas_TB" Relationship="Clinica_Progra_IVModel.Cita_Cliente_ID_FK" FromRole="Clientes_TB" ToRole="Citas_TB" />
+          <NavigationProperty Name="Usuarios_TB" Relationship="Clinica_Progra_IVModel.Cliente_Usuario_ID_PK" FromRole="Clientes_TB" ToRole="Usuarios_TB" />
+          <NavigationProperty Name="Tarjetas_TB" Relationship="Clinica_Progra_IVModel.Tarjeta_Cliente_ID_FK" FromRole="Clientes_TB" ToRole="Tarjetas_TB" />
+        </EntityType>
+        <Association Name="Cita_Cliente_ID_FK">
+          <End Type="Clinica_Progra_IVModel.Clientes_TB" Role="Clientes_TB" Multiplicity="0..1" />
+          <End Type="Clinica_Progra_IVModel.Citas_TB" Role="Citas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes_TB">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Citas_TB">
+              <PropertyRef Name="Cita_Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cliente_Usuario_ID_PK">
+          <End Type="Clinica_Progra_IVModel.Usuarios_TB" Role="Usuarios_TB" Multiplicity="1" />
+          <End Type="Clinica_Progra_IVModel.Clientes_TB" Role="Clientes_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios_TB">
+              <PropertyRef Name="Usuario_ID" />
+            </Principal>
+            <Dependent Role="Clientes_TB">
+              <PropertyRef Name="Cliente_Usuario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tarjeta_Cliente_ID_FK">
+          <End Type="Clinica_Progra_IVModel.Clientes_TB" Role="Clientes_TB" Multiplicity="1" />
+          <End Type="Clinica_Progra_IVModel.Tarjetas_TB" Role="Tarjetas_TB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes_TB">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Tarjetas_TB">
+              <PropertyRef Name="Tarjeta_Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Clinica_Progra_IVModelStoreContainer" CdmEntityContainer="Clinica_Progra_IVEntities">
+          <EntitySetMapping Name="Agenda_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Agenda_TB">
+              <MappingFragment StoreEntitySet="Agenda_TB">
+                <ScalarProperty Name="Agenda_ID" ColumnName="Agenda_ID" />
+                <ScalarProperty Name="Agenda_Cita_ID" ColumnName="Agenda_Cita_ID" />
+                <ScalarProperty Name="Agenda_Horario_ID" ColumnName="Agenda_Horario_ID" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Citas_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Citas_TB">
+              <MappingFragment StoreEntitySet="Citas_TB">
+                <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+                <ScalarProperty Name="Cita_ID" ColumnName="Cita_ID" />
+                <ScalarProperty Name="Cita_Cliente_ID" ColumnName="Cita_Cliente_ID" />
+                <ScalarProperty Name="Cita_MP_ID" ColumnName="Cita_MP_ID" />
+                <ScalarProperty Name="Cita_Consultorio_ID" ColumnName="Cita_Consultorio_ID" />
+                <ScalarProperty Name="Cita_ME_ID" ColumnName="Cita_ME_ID" />
+                <ScalarProperty Name="Cita_Fact_ID" ColumnName="Cita_Fact_ID" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes_Padecimientos_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Clientes_Padecimientos_TB">
+              <MappingFragment StoreEntitySet="Clientes_Padecimientos_TB">
+                <ScalarProperty Name="CP_ID" ColumnName="CP_ID" />
+                <ScalarProperty Name="CP_Cliente_ID" ColumnName="CP_Cliente_ID" />
+                <ScalarProperty Name="CP_Padecimiento_ID" ColumnName="CP_Padecimiento_ID" />
+                <ScalarProperty Name="CP_Comentarios" ColumnName="CP_Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Consultorio_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Consultorio_TB">
+              <MappingFragment StoreEntitySet="Consultorio_TB">
+                <ScalarProperty Name="Consultorio_ID" ColumnName="Consultorio_ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleados_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Empleados_TB">
+              <MappingFragment StoreEntitySet="Empleados_TB">
+                <ScalarProperty Name="Empleado_ID" ColumnName="Empleado_ID" />
+                <ScalarProperty Name="Empleado_Usuario_ID" ColumnName="Empleado_Usuario_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Especialidades_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Especialidades_TB">
+              <MappingFragment StoreEntitySet="Especialidades_TB">
+                <ScalarProperty Name="Especialidad_ID" ColumnName="Especialidad_ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facturas_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Facturas_TB">
+              <MappingFragment StoreEntitySet="Facturas_TB">
+                <ScalarProperty Name="Factura_ID" ColumnName="Factura_ID" />
+                <ScalarProperty Name="Fact_Metodo_Pago" ColumnName="Fact_Metodo_Pago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicos_Especialidades_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Medicos_Especialidades_TB">
+              <MappingFragment StoreEntitySet="Medicos_Especialidades_TB">
+                <ScalarProperty Name="MED_ID" ColumnName="MED_ID" />
+                <ScalarProperty Name="ME_Especialidad_ID" ColumnName="ME_Especialidad_ID" />
+                <ScalarProperty Name="ME_Medico_ID" ColumnName="ME_Medico_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicos_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Medicos_TB">
+              <MappingFragment StoreEntitySet="Medicos_TB">
+                <ScalarProperty Name="Numero_Carne" ColumnName="Numero_Carne" />
+                <ScalarProperty Name="Doctor_Empleado_ID" ColumnName="Doctor_Empleado_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Metodos_Pago_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Metodos_Pago_TB">
+              <MappingFragment StoreEntitySet="Metodos_Pago_TB">
+                <ScalarProperty Name="MP_ID" ColumnName="MP_ID" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Padecimientos_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Padecimientos_TB">
+              <MappingFragment StoreEntitySet="Padecimientos_TB">
+                <ScalarProperty Name="Padecimiento_ID" ColumnName="Padecimiento_ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Procedimientos_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Procedimientos_TB">
+              <MappingFragment StoreEntitySet="Procedimientos_TB">
+                <ScalarProperty Name="Procedimiento_ID" ColumnName="Procedimiento_ID" />
+                <ScalarProperty Name="Procedimiento_Especialidad_ID" ColumnName="Procedimiento_Especialidad_ID" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Costo" ColumnName="Costo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipos_Perfiles_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Tipos_Perfiles_TB">
+              <MappingFragment StoreEntitySet="Tipos_Perfiles_TB">
+                <ScalarProperty Name="Tipo_Perfil_ID" ColumnName="Tipo_Perfil_ID" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Usuarios_TB">
+              <MappingFragment StoreEntitySet="Usuarios_TB">
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Tipo_Perfil" ColumnName="Tipo_Perfil" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Usuario_ID" ColumnName="Usuario_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Horarios_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Horarios_TB">
+              <MappingFragment StoreEntitySet="Horarios_TB">
+                <ScalarProperty Name="Disponible" ColumnName="Disponible" />
+                <ScalarProperty Name="Hora_Fin" ColumnName="Hora_Fin" />
+                <ScalarProperty Name="Hora_Inicio" ColumnName="Hora_Inicio" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Horario_ID" ColumnName="Horario_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tarjetas_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Tarjetas_TB">
+              <MappingFragment StoreEntitySet="Tarjetas_TB">
+                <ScalarProperty Name="Fecha_Vencimiento" ColumnName="Fecha_Vencimiento" />
+                <ScalarProperty Name="Tarjeta_Cliente_ID" ColumnName="Tarjeta_Cliente_ID" />
+                <ScalarProperty Name="Numero_Tarjeta" ColumnName="Numero_Tarjeta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes_TB">
+            <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Clientes_TB">
+              <MappingFragment StoreEntitySet="Clientes_TB">
+                <ScalarProperty Name="Cliente_Usuario_ID" ColumnName="Cliente_Usuario_ID" />
+                <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
