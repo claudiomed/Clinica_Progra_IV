@@ -1,15 +1,15 @@
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\obj\Debug\SVC.csprojAssemblyReference.cache
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\obj\Debug\SVC.csproj.CoreCompileInputs.cache
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\bin\Debug\SVC.dll.config
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\bin\Debug\SVC.dll
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\bin\Debug\SVC.pdb
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\bin\Debug\BLL.dll
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\bin\Debug\DAL.dll
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\bin\Debug\EntityFramework.dll
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\bin\Debug\BLL.pdb
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\bin\Debug\DAL.pdb
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\bin\Debug\DAL.dll.config
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\bin\Debug\EntityFramework.xml
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\obj\Debug\SVC.csproj.CopyComplete
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\obj\Debug\SVC.dll
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\SVC\obj\Debug\SVC.pdb
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\bin\Debug\SVC.dll.config
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\bin\Debug\SVC.dll
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\bin\Debug\SVC.pdb
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\obj\Debug\SVC.csproj.CoreCompileInputs.cache
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\obj\Debug\SVC.dll
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\obj\Debug\SVC.pdb
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\bin\Debug\BLL.dll
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\bin\Debug\DAL.dll
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\bin\Debug\EntityFramework.dll
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\bin\Debug\BLL.pdb
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\bin\Debug\DAL.pdb
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\bin\Debug\DAL.dll.config
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\bin\Debug\EntityFramework.xml
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\obj\Debug\SVC.csprojAssemblyReference.cache
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\SVC\obj\Debug\SVC.csproj.CopyComplete

@@ -10,3 +10,15 @@ C:\Users\Claudio\source\repos\Clinica_Progra_IV\BLL\obj\Debug\BLL.csproj.CoreCom
 C:\Users\Claudio\source\repos\Clinica_Progra_IV\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\Claudio\source\repos\Clinica_Progra_IV\BLL\obj\Debug\BLL.dll
 C:\Users\Claudio\source\repos\Clinica_Progra_IV\BLL\obj\Debug\BLL.pdb
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\bin\Debug\BLL.dll
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\bin\Debug\BLL.pdb
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\bin\Debug\DAL.dll
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\bin\Debug\DAL.pdb
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\bin\Debug\DAL.dll.config
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\obj\Debug\BLL.dll
+C:\Users\Claudio\Documents\Universidad\Cuatrimestre 7\Programacion 4\Proyecto #2\Clinica_Progra_IV_Repositorio\Clinica_Progra_IV\BLL\obj\Debug\BLL.pdb

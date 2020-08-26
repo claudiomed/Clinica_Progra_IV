@@ -14,6 +14,7 @@
     <EntitySetMapping Name="Citas_TB">
       <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Citas_TB">
         <MappingFragment StoreEntitySet="Citas_TB">
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
           <ScalarProperty Name="Cita_ID" ColumnName="Cita_ID" />
           <ScalarProperty Name="Cita_Cliente_ID" ColumnName="Cita_Cliente_ID" />
           <ScalarProperty Name="Cita_MP_ID" ColumnName="Cita_MP_ID" />
@@ -32,14 +33,6 @@
           <ScalarProperty Name="CP_Cliente_ID" ColumnName="CP_Cliente_ID" />
           <ScalarProperty Name="CP_Padecimiento_ID" ColumnName="CP_Padecimiento_ID" />
           <ScalarProperty Name="CP_Comentarios" ColumnName="CP_Comentarios" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Clientes_TB">
-      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Clientes_TB">
-        <MappingFragment StoreEntitySet="Clientes_TB">
-          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
-          <ScalarProperty Name="Cliente_Usuario_ID" ColumnName="Cliente_Usuario_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -73,17 +66,6 @@
         <MappingFragment StoreEntitySet="Facturas_TB">
           <ScalarProperty Name="Factura_ID" ColumnName="Factura_ID" />
           <ScalarProperty Name="Fact_Metodo_Pago" ColumnName="Fact_Metodo_Pago" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Horarios_TB">
-      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Horarios_TB">
-        <MappingFragment StoreEntitySet="Horarios_TB">
-          <ScalarProperty Name="Horario_ID" ColumnName="Horario_ID" />
-          <ScalarProperty Name="Dia" ColumnName="Dia" />
-          <ScalarProperty Name="Hora_Inicio" ColumnName="Hora_Inicio" />
-          <ScalarProperty Name="Hora_Fin" ColumnName="Hora_Fin" />
-          <ScalarProperty Name="Disponible" ColumnName="Disponible" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -149,6 +131,34 @@
           <ScalarProperty Name="Tipo_Perfil" ColumnName="Tipo_Perfil" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Usuario_ID" ColumnName="Usuario_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horarios_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Horarios_TB">
+        <MappingFragment StoreEntitySet="Horarios_TB">
+          <ScalarProperty Name="Disponible" ColumnName="Disponible" />
+          <ScalarProperty Name="Hora_Fin" ColumnName="Hora_Fin" />
+          <ScalarProperty Name="Hora_Inicio" ColumnName="Hora_Inicio" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="Horario_ID" ColumnName="Horario_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tarjetas_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Tarjetas_TB">
+        <MappingFragment StoreEntitySet="Tarjetas_TB">
+          <ScalarProperty Name="Fecha_Vencimiento" ColumnName="Fecha_Vencimiento" />
+          <ScalarProperty Name="Tarjeta_Cliente_ID" ColumnName="Tarjeta_Cliente_ID" />
+          <ScalarProperty Name="Numero_Tarjeta" ColumnName="Numero_Tarjeta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes_TB">
+      <EntityTypeMapping TypeName="Clinica_Progra_IVModel.Clientes_TB">
+        <MappingFragment StoreEntitySet="Clientes_TB">
+          <ScalarProperty Name="Cliente_Usuario_ID" ColumnName="Cliente_Usuario_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

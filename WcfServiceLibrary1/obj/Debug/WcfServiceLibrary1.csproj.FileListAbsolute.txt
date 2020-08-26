@@ -1,6 +1,0 @@
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.dll.config
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.dll
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.pdb
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.csproj.CoreCompileInputs.cache
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.dll
-C:\Users\Claudio\source\repos\Clinica_Progra_IV\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.pdb

@@ -21,6 +21,7 @@
     <Property Name="Cita_Fact_ID" Type="int" />
     <Property Name="Fecha" Type="date" />
     <Property Name="Estado" Type="char" MaxLength="1" />
+    <Property Name="Fecha_Finalizacion" Type="datetime" />
   </EntityType>
   <EntityType Name="Clientes_Padecimientos_TB">
     <Key>
@@ -73,8 +74,8 @@
     </Key>
     <Property Name="Horario_ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Dia" Type="char" MaxLength="1" Nullable="false" />
-    <Property Name="Hora_Inicio" Type="varchar" MaxLength="15" Nullable="false" />
-    <Property Name="Hora_Fin" Type="varchar" MaxLength="15" />
+    <Property Name="Hora_Inicio" Type="datetime" />
+    <Property Name="Hora_Fin" Type="datetime" />
     <Property Name="Disponible" Type="char" MaxLength="1" Nullable="false" />
   </EntityType>
   <EntityType Name="Medicos_Especialidades_TB">
@@ -114,6 +115,14 @@
     <Property Name="Procedimiento_Especialidad_ID" Type="smallint" Nullable="false" />
     <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Costo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tarjetas_TB">
+    <Key>
+      <PropertyRef Name="Numero_Tarjeta" />
+    </Key>
+    <Property Name="Numero_Tarjeta" Type="int" Nullable="false" />
+    <Property Name="Tarjeta_Cliente_ID" Type="int" Nullable="false" />
+    <Property Name="Fecha_Vencimiento" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="Tipos_Perfiles_TB">
     <Key>
@@ -219,6 +228,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Cliente_Usuario_ID_PK">
+    <End Role="Usuarios_TB" Type="Self.Usuarios_TB" Multiplicity="1" />
+    <End Role="Clientes_TB" Type="Self.Clientes_TB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios_TB">
+        <PropertyRef Name="Usuario_ID" />
+      </Principal>
+      <Dependent Role="Clientes_TB">
+        <PropertyRef Name="Cliente_Usuario_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Doctor_Empleado_ID_PK">
     <End Role="Empleados_TB" Type="Self.Empleados_TB" Multiplicity="1" />
     <End Role="Medicos_TB" Type="Self.Medicos_TB" Multiplicity="*" />
@@ -255,6 +276,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Tarjeta_Cliente_ID_FK">
+    <End Role="Clientes_TB" Type="Self.Clientes_TB" Multiplicity="1" />
+    <End Role="Tarjetas_TB" Type="Self.Tarjetas_TB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes_TB">
+        <PropertyRef Name="Cliente_ID" />
+      </Principal>
+      <Dependent Role="Tarjetas_TB">
+        <PropertyRef Name="Tarjeta_Cliente_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Usuario_TP_FK">
     <End Role="Tipos_Perfiles_TB" Type="Self.Tipos_Perfiles_TB" Multiplicity="1" />
     <End Role="Usuarios_TB" Type="Self.Usuarios_TB" Multiplicity="*" />
@@ -282,6 +315,7 @@
     <EntitySet Name="Metodos_Pago_TB" EntityType="Self.Metodos_Pago_TB" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Padecimientos_TB" EntityType="Self.Padecimientos_TB" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Procedimientos_TB" EntityType="Self.Procedimientos_TB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tarjetas_TB" EntityType="Self.Tarjetas_TB" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tipos_Perfiles_TB" EntityType="Self.Tipos_Perfiles_TB" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios_TB" EntityType="Self.Usuarios_TB" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="Agenda_Cita_ID_FK" Association="Self.Agenda_Cita_ID_FK">
@@ -312,6 +346,10 @@
       <End Role="Metodos_Pago_TB" EntitySet="Metodos_Pago_TB" />
       <End Role="Citas_TB" EntitySet="Citas_TB" />
     </AssociationSet>
+    <AssociationSet Name="Cliente_Usuario_ID_PK" Association="Self.Cliente_Usuario_ID_PK">
+      <End Role="Usuarios_TB" EntitySet="Usuarios_TB" />
+      <End Role="Clientes_TB" EntitySet="Clientes_TB" />
+    </AssociationSet>
     <AssociationSet Name="Doctor_Empleado_ID_PK" Association="Self.Doctor_Empleado_ID_PK">
       <End Role="Empleados_TB" EntitySet="Empleados_TB" />
       <End Role="Medicos_TB" EntitySet="Medicos_TB" />
@@ -323,6 +361,10 @@
     <AssociationSet Name="Procedimiento_Especialidad_ID_PK" Association="Self.Procedimiento_Especialidad_ID_PK">
       <End Role="Especialidades_TB" EntitySet="Especialidades_TB" />
       <End Role="Procedimientos_TB" EntitySet="Procedimientos_TB" />
+    </AssociationSet>
+    <AssociationSet Name="Tarjeta_Cliente_ID_FK" Association="Self.Tarjeta_Cliente_ID_FK">
+      <End Role="Clientes_TB" EntitySet="Clientes_TB" />
+      <End Role="Tarjetas_TB" EntitySet="Tarjetas_TB" />
     </AssociationSet>
     <AssociationSet Name="Usuario_TP_FK" Association="Self.Usuario_TP_FK">
       <End Role="Tipos_Perfiles_TB" EntitySet="Tipos_Perfiles_TB" />

@@ -10,6 +10,7 @@ namespace BLL
 {
     public class BL
     {
+
         #region Métodos CRUD
 
 
@@ -901,6 +902,200 @@ namespace BLL
 
 
 
+        #endregion
+
+        #region Métodos de consulta
+        /// <summary>
+        /// Consulta lista de tipos de perfil
+        /// </summary>
+        /// <returns></returns>
+        public static List<Tipos_Perfiles_TB> consultarTiposUsuario()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'TIPOS_PERFILES_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Tipo_Perfiles(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta la agenda
+        /// </summary>
+        /// <returns></returns>
+        public static List<Agenda_TB> consultarAgenda()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'AGENDA_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Agenda(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de  Clientes_Padecimientos
+        /// </summary>
+        /// <returns></returns>
+        public static List<Clientes_Padecimientos_TB> consultarClientesPadecimientos()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Clientes_Padecimientos_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Clientes_Padecimientos(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de  Clientes
+        /// </summary>
+        /// <returns></returns>
+        public static List<Clientes_TB> consultarClientes()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Clientes_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Clientes(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de  Clientes
+        /// </summary>
+        /// <returns></returns>
+        public static List<Consultorio_TB> consultarConsultorios()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Consultorio_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Consultorios(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de  empleados
+        /// </summary>
+        /// <returns></returns>
+        public static List<Empleados_TB> consultarEmpleados()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Empleados_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Empleados(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de  especialidades
+        /// </summary>
+        /// <returns></returns>
+        public static List<Especialidades_TB> consultarEspecialidades()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Especialidades_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Especialidades(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de  facturas
+        /// </summary>
+        /// <returns></returns>
+        public static List<Facturas_TB> consultarFacturas()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Facturas_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Facturas(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de Horarios
+        /// </summary>
+        /// <returns></returns>
+        public static List<Horarios_TB> consultarHorarios()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Horarios_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Horarios(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de Medicos especialidades
+        /// </summary>
+        /// <returns></returns>
+        public static List<Medicos_Especialidades_TB> consultarMedicosEspecialidades()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Medicos_Especialidades_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Medicos_Especialidades(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de Medicos.
+        /// </summary>
+        /// <returns></returns>
+        public static List<Medicos_TB> consultarMedicos()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Medicos_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Medicos(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de Metodos de Pago.
+        /// </summary>
+        /// <returns></returns>
+        public static List<Metodos_Pago_TB> consultarMetodosPago()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Metodos_Pago_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Metodos_Pago(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de padecimientos.
+        /// </summary>
+        /// <returns></returns>
+        public static List<Padecimientos_TB> consultarPadecimientos()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Padecimientos_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Padecimientos(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de Procedimientos.
+        /// </summary>
+        /// <returns></returns>
+        public static List<Procedimientos_TB> consultarProcedimientos()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Procedimientos_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Procedimientos(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de tarjetas.
+        /// </summary>
+        /// <returns></returns>
+        public static List<Tarjetas_TB> consultarTarjetas()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Tarjetas_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Tarjetas(sentencia);
+        }
+
+        /// <summary>
+        /// Consulta lista de tarjetas.
+        /// </summary>
+        /// <returns></returns>
+        public static List<Usuarios_TB> consultarUsuarios()
+        {
+            SQLSentencias sentencia = new SQLSentencias();
+            sentencia.Peticion = @"EXEC Consultar_tablas_SP 'Usuarios_TB'";
+            AD objAcceso = new AD();
+            return objAcceso.Consultar_Usuarios(sentencia);
+        }
         #endregion
 
     }
