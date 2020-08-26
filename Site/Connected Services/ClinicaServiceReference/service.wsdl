@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Clinica_Progra_IV" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DAL" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_MEDICOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_MEDICOS" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_MEDICOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_MEDICOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_ESPECIALIDADES_InputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_ESPECIALIDADES" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_ESPECIALIDADES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_ESPECIALIDADESResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_MEDICOS_ESPECIALIDADES_InputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_MEDICOS_ESPECIALIDADES" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_MEDICOS_ESPECIALIDADES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_MEDICOS_ESPECIALIDADESResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_AGENDA_InputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_AGENDA" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_AGENDA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_AGENDAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_CITAS_InputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_CITAS" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_CITAS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_CITASResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_CLIENTES_InputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_CLIENTES" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_CLIENTES_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_CLIENTESResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_PADECIMIENTOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_PADECIMIENTOS" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_PADECIMIENTOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_PADECIMIENTOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_CLIENTES_PADECIMIENTOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_CLIENTES_PADECIMIENTOS" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_CLIENTES_PADECIMIENTOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_CLIENTES_PADECIMIENTOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_CONSULTORIOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_CONSULTORIOS" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_CONSULTORIOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_CONSULTORIOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_HORARIOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_HORARIOS" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_HORARIOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_HORARIOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_TARJETAS_InputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_TARJETAS" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_CRUD_TARJETAS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CRUD_TARJETASResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarTiposUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarTiposUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarTiposUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarTiposUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarAgenda_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarAgenda" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarAgenda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarAgendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarClientesPadecimientos_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarClientesPadecimientos" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarClientesPadecimientos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarClientesPadecimientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarClientes" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarConsultorios_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarConsultorios" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarConsultorios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarConsultoriosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarEmpleados_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarEmpleados" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarEmpleados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarEmpleadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarEspecialidades_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarEspecialidades" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarEspecialidades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarEspecialidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarFacturas_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarFacturas" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarFacturas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarFacturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarHorarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarHorarios" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarHorarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarHorariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarMedicosEspecialidades_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarMedicosEspecialidades" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarMedicosEspecialidades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarMedicosEspecialidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarMedicos_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarMedicos" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarMedicos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarMedicosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarMetodosPago_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarMetodosPago" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarMetodosPago_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarMetodosPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarPadecimientos_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarPadecimientos" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarPadecimientos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarPadecimientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarProcedimientos_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarProcedimientos" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarProcedimientos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarProcedimientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarTarjetas_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarTarjetas" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarTarjetas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarTarjetasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:consultarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IClinica_Progra_IV_consultarUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:consultarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IClinica_Progra_IV">
+    <wsdl:operation name="CRUD_MEDICOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_MEDICOS" message="tns:IClinica_Progra_IV_CRUD_MEDICOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_MEDICOSResponse" message="tns:IClinica_Progra_IV_CRUD_MEDICOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_ESPECIALIDADES">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_ESPECIALIDADES" message="tns:IClinica_Progra_IV_CRUD_ESPECIALIDADES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_ESPECIALIDADESResponse" message="tns:IClinica_Progra_IV_CRUD_ESPECIALIDADES_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_MEDICOS_ESPECIALIDADES">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_MEDICOS_ESPECIALIDADES" message="tns:IClinica_Progra_IV_CRUD_MEDICOS_ESPECIALIDADES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_MEDICOS_ESPECIALIDADESResponse" message="tns:IClinica_Progra_IV_CRUD_MEDICOS_ESPECIALIDADES_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_AGENDA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_AGENDA" message="tns:IClinica_Progra_IV_CRUD_AGENDA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_AGENDAResponse" message="tns:IClinica_Progra_IV_CRUD_AGENDA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_CITAS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_CITAS" message="tns:IClinica_Progra_IV_CRUD_CITAS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_CITASResponse" message="tns:IClinica_Progra_IV_CRUD_CITAS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_CLIENTES">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_CLIENTES" message="tns:IClinica_Progra_IV_CRUD_CLIENTES_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_CLIENTESResponse" message="tns:IClinica_Progra_IV_CRUD_CLIENTES_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_PADECIMIENTOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_PADECIMIENTOS" message="tns:IClinica_Progra_IV_CRUD_PADECIMIENTOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_PADECIMIENTOSResponse" message="tns:IClinica_Progra_IV_CRUD_PADECIMIENTOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_CLIENTES_PADECIMIENTOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_CLIENTES_PADECIMIENTOS" message="tns:IClinica_Progra_IV_CRUD_CLIENTES_PADECIMIENTOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_CLIENTES_PADECIMIENTOSResponse" message="tns:IClinica_Progra_IV_CRUD_CLIENTES_PADECIMIENTOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_CONSULTORIOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_CONSULTORIOS" message="tns:IClinica_Progra_IV_CRUD_CONSULTORIOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_CONSULTORIOSResponse" message="tns:IClinica_Progra_IV_CRUD_CONSULTORIOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_HORARIOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_HORARIOS" message="tns:IClinica_Progra_IV_CRUD_HORARIOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_HORARIOSResponse" message="tns:IClinica_Progra_IV_CRUD_HORARIOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_TARJETAS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_TARJETAS" message="tns:IClinica_Progra_IV_CRUD_TARJETAS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/CRUD_TARJETASResponse" message="tns:IClinica_Progra_IV_CRUD_TARJETAS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarTiposUsuario" message="tns:IClinica_Progra_IV_consultarTiposUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarTiposUsuarioResponse" message="tns:IClinica_Progra_IV_consultarTiposUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarAgenda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarAgenda" message="tns:IClinica_Progra_IV_consultarAgenda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarAgendaResponse" message="tns:IClinica_Progra_IV_consultarAgenda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarClientesPadecimientos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarClientesPadecimientos" message="tns:IClinica_Progra_IV_consultarClientesPadecimientos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarClientesPadecimientosResponse" message="tns:IClinica_Progra_IV_consultarClientesPadecimientos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarClientes" message="tns:IClinica_Progra_IV_consultarClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarClientesResponse" message="tns:IClinica_Progra_IV_consultarClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarConsultorios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarConsultorios" message="tns:IClinica_Progra_IV_consultarConsultorios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarConsultoriosResponse" message="tns:IClinica_Progra_IV_consultarConsultorios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarEmpleados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarEmpleados" message="tns:IClinica_Progra_IV_consultarEmpleados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarEmpleadosResponse" message="tns:IClinica_Progra_IV_consultarEmpleados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarEspecialidades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarEspecialidades" message="tns:IClinica_Progra_IV_consultarEspecialidades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarEspecialidadesResponse" message="tns:IClinica_Progra_IV_consultarEspecialidades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarFacturas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarFacturas" message="tns:IClinica_Progra_IV_consultarFacturas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarFacturasResponse" message="tns:IClinica_Progra_IV_consultarFacturas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarHorarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarHorarios" message="tns:IClinica_Progra_IV_consultarHorarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarHorariosResponse" message="tns:IClinica_Progra_IV_consultarHorarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMedicosEspecialidades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarMedicosEspecialidades" message="tns:IClinica_Progra_IV_consultarMedicosEspecialidades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarMedicosEspecialidadesResponse" message="tns:IClinica_Progra_IV_consultarMedicosEspecialidades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMedicos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarMedicos" message="tns:IClinica_Progra_IV_consultarMedicos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarMedicosResponse" message="tns:IClinica_Progra_IV_consultarMedicos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMetodosPago">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarMetodosPago" message="tns:IClinica_Progra_IV_consultarMetodosPago_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarMetodosPagoResponse" message="tns:IClinica_Progra_IV_consultarMetodosPago_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarPadecimientos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarPadecimientos" message="tns:IClinica_Progra_IV_consultarPadecimientos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarPadecimientosResponse" message="tns:IClinica_Progra_IV_consultarPadecimientos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarProcedimientos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarProcedimientos" message="tns:IClinica_Progra_IV_consultarProcedimientos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarProcedimientosResponse" message="tns:IClinica_Progra_IV_consultarProcedimientos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTarjetas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarTarjetas" message="tns:IClinica_Progra_IV_consultarTarjetas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarTarjetasResponse" message="tns:IClinica_Progra_IV_consultarTarjetas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarUsuarios" message="tns:IClinica_Progra_IV_consultarUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClinica_Progra_IV/consultarUsuariosResponse" message="tns:IClinica_Progra_IV_consultarUsuarios_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IClinica_Progra_IV" type="tns:IClinica_Progra_IV">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CRUD_MEDICOS">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/CRUD_MEDICOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_ESPECIALIDADES">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/CRUD_ESPECIALIDADES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_MEDICOS_ESPECIALIDADES">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/CRUD_MEDICOS_ESPECIALIDADES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_AGENDA">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/CRUD_AGENDA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_CITAS">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/CRUD_CITAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_CLIENTES">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/CRUD_CLIENTES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_PADECIMIENTOS">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/CRUD_PADECIMIENTOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_CLIENTES_PADECIMIENTOS">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/CRUD_CLIENTES_PADECIMIENTOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_CONSULTORIOS">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/CRUD_CONSULTORIOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_HORARIOS">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/CRUD_HORARIOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CRUD_TARJETAS">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/CRUD_TARJETAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposUsuario">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarTiposUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAgenda">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarAgenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarClientesPadecimientos">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarClientesPadecimientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarClientes">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarConsultorios">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarConsultorios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEmpleados">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarEmpleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEspecialidades">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarEspecialidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarFacturas">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarFacturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarHorarios">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarHorarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMedicosEspecialidades">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarMedicosEspecialidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMedicos">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarMedicos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMetodosPago">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarMetodosPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPadecimientos">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarPadecimientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProcedimientos">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarProcedimientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTarjetas">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarTarjetas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/IClinica_Progra_IV/consultarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Clinica_Progra_IV">
+    <wsdl:port name="BasicHttpBinding_IClinica_Progra_IV" binding="tns:BasicHttpBinding_IClinica_Progra_IV">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/SVC/Clinica_Progra_IV/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

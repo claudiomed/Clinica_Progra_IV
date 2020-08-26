@@ -152,6 +152,51 @@ namespace DAL
 
 
         #region Métodos de consulta
+        public List<Tipos_Perfiles_TB> Consultar_Tipo_Perfiles(SQLSentencias P_Peticion)
+        {
+            List<Tipos_Perfiles_TB> Lst_Resultados = new List<Tipos_Perfiles_TB>(); //Esta es la variable local que retornara valores
+            DataTable dt = new DataTable(); //Variable contenedora del resultado en BD - Temporal
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(); //Instancia de SQL Command, que permite configurar comando a ejecutar en BD
+
+                //ASigna los valores del QUERY a ejecutar en SQL
+                cmd.Connection = objconexion; //ASigna conexion
+                cmd.CommandType = System.Data.CommandType.Text; //ASigna el tipo
+                cmd.CommandText = P_Peticion.Peticion; //ASigna peticion recibida
+
+                if (P_Peticion.lstParametros.Count > 0) //Consulta si tiene parametros
+                    cmd.Parameters.AddRange(P_Peticion.lstParametros.ToArray()); //Los asigna
+
+                SqlDataAdapter objCaptura = new SqlDataAdapter(cmd); //Aqui se crea instancia para reliazar consultas en BD
+                objCaptura.Fill(dt); //Aqui se ejecuta la consulta en BD y se almacena en memoria la respuesta
+
+                if (dt.Rows.Count > 0) //Valida si la consulta devolvio resultados
+                {
+                    foreach (DataRow item in dt.Rows)
+                    {
+                        Tipos_Perfiles_TB u = new Tipos_Perfiles_TB(); //Instancia temporal
+
+                        u.Tipo_Perfil_ID = Int16.Parse(item.ItemArray[0].ToString());
+                        u.Descripcion = item.ItemArray[1].ToString();
+
+                        Lst_Resultados.Add(u);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                this.CERRAR();
+            }
+
+            return Lst_Resultados;
+        }
 
         public List<Usuarios_TB> Consultar_Usuarios(SQLSentencias P_Peticion)
         {
